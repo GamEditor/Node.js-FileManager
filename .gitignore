@@ -1,0 +1,12 @@
+# node
+node_modules
+package-lock.json
+
+# user files
+userfiles
+
+# documentation files
+~$cumentation.docx
+
+# temps
+*.tmp

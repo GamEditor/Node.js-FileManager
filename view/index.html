@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>File Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <!-- loading scripts and styles -->
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css" />
+    <script src="/js/getfilelist.js"></script>
+    <script src="/js/uploader.js"></script>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'fileuploader'); getListOfFiles('file', 'fileholder', 'loadinggif'); document.getElementById('viewoptions').style.display = 'none';">file</button>
+        <button class="tablinks" onclick="openTab(event, 'fontuploader'); getListOfFiles('font', 'fileholder', 'loadinggif'); document.getElementById('viewoptions').style.display = 'none';">font</button>
+        <button class="tablinks" onclick="openTab(event, 'htmluploader'); getListOfFiles('html', 'fileholder', 'loadinggif'); document.getElementById('viewoptions').style.display = 'none';">html</button>
+        <button class="tablinks" onclick="openTab(event, 'imageuploader'); getListOfFiles('image', 'fileholder', 'loadinggif'); document.getElementById('viewoptions').style.display = 'block';">image</button>
+        <button class="tablinks" onclick="openTab(event, 'pdfuploader'); getListOfFiles('pdf', 'fileholder', 'loadinggif'); document.getElementById('viewoptions').style.display = 'none';">pdf</button>
+        <button class="tablinks" onclick="openTab(event, 'videouploader'); getListOfFiles('video', 'fileholder', 'loadinggif'); document.getElementById('viewoptions').style.display = 'none';">video</button>
+
+        <div id="viewoptions">
+            <form>
+                View options:
+                <input type="radio" name="viewoption" value="details" onclick="replaceClassName('tile', 'details')" checked>Details
+                <input type="radio" name="viewoption" value="tile" onclick="replaceClassName('details', 'tile')">Tile
+            </form>
+        </div>
+    </div>
+    
+    <div id="progressBar"></div>
+
+    <div id="fileuploader" class="tabcontent">
+        <p><b>file</b></p>
+        <form id="form_fileUpload" method="POST" action="/?type=file" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <input type="button" onclick="uploadToServer(document.getElementById('form_fileUpload'), document.getElementById('progressBar'))" value="Upload">
+        </form>
+    </div>
+
+    <div id="fontuploader" class="tabcontent">
+        <p><b>font</b></p>
+        <form id="form_fontUpload" method="POST" action="/?type=font" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".ttf, .otf" required>
+            <input type="button" onclick="uploadToServer(document.getElementById('form_fontUpload'), document.getElementById('progressBar'))" value="Upload">
+        </form>
+    </div>
+
+    <div id="htmluploader" class="tabcontent">
+        <p><b>html</b></p>
+        <form id="form_htmlUpload" method="POST" action="/?type=html" enctype="multipart/form-data">
+            <input type="file" name="file" accept="text/html, text/htm" required>
+            <input type="button" onclick="uploadToServer(document.getElementById('form_htmlUpload'), document.getElementById('progressBar'))" value="Upload">
+        </form>
+    </div>
+
+    <div id="imageuploader" class="tabcontent">
+        <p><b>image</b></p>
+        <form id="form_imageUpload" method="POST" action="/?type=image" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <input type="button" onclick="uploadToServer(document.getElementById('form_imageUpload'), document.getElementById('progressBar'))" value="Upload">
+        </form>
+    </div>
+
+    <div id="pdfuploader" class="tabcontent">
+        <p><b>pdf</b></p>
+        <form id="form_pdfUpload" method="POST" action="/?type=pdf" enctype="multipart/form-data">
+            <input type="file" name="file" accept="application/pdf" required>
+            <input type="button" onclick="uploadToServer(document.getElementById('form_pdfUpload'), document.getElementById('progressBar'))" value="Upload">
+        </form>
+    </div>
+
+    <div id="videouploader" class="tabcontent">
+        <p><b>video</b></p>
+        <form id="form_videoUpload" method="POST" action="/?type=video" enctype="multipart/form-data">
+            <input type="file" name="file" accept="video/*" required>
+            <input type="button" onclick="uploadToServer(document.getElementById('form_videoUpload'), document.getElementById('progressBar'))" value="Upload">
+        </form>
+    </div>
+
+    <div><img id="loadinggif" src="/img/200.gif" alt="Loading Files..."></div>
+
+    <div class="fileholder" id="fileholder"></div>
+</body>
+</html>

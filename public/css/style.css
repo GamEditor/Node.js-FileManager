@@ -1,0 +1,207 @@
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+div#viewoptions {
+    display: none;
+    float: right;
+    padding: 14px 16px;
+}
+
+div#progressBar {
+    background-color: gray;
+    height: 10px;
+    width: 0%;  /* for start */
+}
+
+table.fileproperties {
+    width: 100%;
+    background-color: #e4e4e4;
+    border-collapse: collapse;
+}
+
+table.fileproperties th, table.fileproperties td {
+    padding: 8px;
+    width: 33.33%;
+}
+
+table.fileproperties tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+table.fileproperties tr:hover {
+    background-color: rgba(170, 239, 248, 0.5);
+}
+
+table.fileproperties th {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: left;
+    border-left: 1px solid #ddd;
+    background-color: #ccc;
+    color: black;
+}
+
+table.fileproperties td a {
+    text-decoration: none;
+}
+
+table.fileproperties td a:hover, table.fileproperties td a:link, table.fileproperties td a:visited, table.fileproperties td a:active {
+    text-decoration: none;
+    color: blue;
+}
+
+#loadinggif {
+    position: fixed;
+    display: none;
+    top: 50%;
+    left: 50%;
+    width: 5vw;
+    height: 5vw;
+    transform: translate(-50%, -50%);
+}
+
+/* tile */
+div.tile {
+    width: 350px;
+    height: 100px;
+    margin: 2px;
+    float: left;
+    background-color: rgb(231, 231, 231);
+}
+
+div.tile:hover {
+    background-color: rgba(170, 239, 248, 0.5);
+}
+
+div.tile div.image {
+    display: flex;
+    width: 30%;
+    height: 100%;
+    float: left;
+    background-color: rgb(211, 211, 211);
+}
+
+div.tile div.image img {
+    display: flex;
+    margin: auto;
+    width: 100%;
+}
+
+div.tile p {
+    line-height: 1;
+}
+
+div.tile p a {
+    text-decoration: none;
+}
+
+/* details */
+div.details {
+    position: relative;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 100px;
+    float: left;
+
+    background-color: rgb(231, 231, 231);
+}
+
+div.details:hover {
+    background-color: rgba(170, 239, 248, 0.5);
+}
+
+div.details div.image {
+    display: flex;
+    width: 25%;
+    height: 100%;
+    float: left;
+    margin: auto;
+
+    background-color: rgb(211, 211, 211);
+}
+
+div.details div.image img {
+    height: 100%;
+    margin: auto;
+}
+
+div.details p {
+    position: absolute;
+    float: left;
+    width: 25%;
+    text-align: center;
+    line-height: 1.5;
+    vertical-align: middle;
+    top: 50%;
+    margin: 0;
+    transform: translateY(-50%);
+}
+
+div.details p a {
+    text-decoration: none;
+}
+
+
+div.details p:nth-of-type(1) {
+    left: 24%;
+}
+
+div.details p:nth-of-type(2) {
+    left: 45%;
+}
+
+div.details p:nth-of-type(3) {
+    left: 70%;
+}
+
+@media screen and (max-width: 850px){
+    div.details p:nth-of-type(1) {
+        left: 35%;
+    }
+
+    div.details p:nth-of-type(2) {
+        left: 45%;
+    }
+
+    div.details p:nth-of-type(3) {
+        left: 70%;
+    }
+}
