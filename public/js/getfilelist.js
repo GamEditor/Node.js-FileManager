@@ -1,9 +1,9 @@
 const table = 
     '<table class="fileproperties">\
         <tr>\
-            <th>File Name</th>\
-            <th>File Size</th>\
-            <th>File Address</th>\
+            <th>Name</th>\
+            <th>Size</th>\
+            <th>Address</th>\
         </tr>';
 
 /**
